@@ -1,0 +1,62 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Redactor", "DickinsonBros.Redactor\DickinsonBros.Redactor.csproj", "{DFC67909-3451-416C-A279-FD4B177C3DCE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Library", "1 Library", "{1D41B9FB-8523-4B19-B090-336277DD521F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9 Misc", "9 Misc", "{A81B1565-6DCD-4210-8E6A-7BF18BEDCB26}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Redactor.Tests", "DickinsonBros.Redactor.Tests\DickinsonBros.Redactor.Tests.csproj", "{312671E5-BD5C-4DE7-B632-51A8912A7A8A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 Abstractions", "0 Abstractions", "{6A90BFEC-FD94-4335-9020-0B09C5FCCF04}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Redactor.Abstractions", "DickinsonBros.Redactor.Abstractions\DickinsonBros.Redactor.Abstractions.csproj", "{A47ED68B-97C8-41BA-8843-0467C3033187}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Abstractions", "Abstractions", "{E79B0F44-9394-4329-93BC-91A8D69C82B2}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\Abstractions\CreateNugetPackage.ps1 = Scripts\Abstractions\CreateNugetPackage.ps1
+		Scripts\Abstractions\CreateNugetPackagePreRelease.ps1 = Scripts\Abstractions\CreateNugetPackagePreRelease.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{7A531FD7-930D-4744-8B18-0AD0EC25DF72}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\Library\CreateNugetPackage.ps1 = Scripts\Library\CreateNugetPackage.ps1
+		Scripts\Library\CreateNugetPackagePreRelease.ps1 = Scripts\Library\CreateNugetPackagePreRelease.ps1
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFC67909-3451-416C-A279-FD4B177C3DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFC67909-3451-416C-A279-FD4B177C3DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFC67909-3451-416C-A279-FD4B177C3DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFC67909-3451-416C-A279-FD4B177C3DCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{312671E5-BD5C-4DE7-B632-51A8912A7A8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{312671E5-BD5C-4DE7-B632-51A8912A7A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{312671E5-BD5C-4DE7-B632-51A8912A7A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{312671E5-BD5C-4DE7-B632-51A8912A7A8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A47ED68B-97C8-41BA-8843-0467C3033187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A47ED68B-97C8-41BA-8843-0467C3033187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A47ED68B-97C8-41BA-8843-0467C3033187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A47ED68B-97C8-41BA-8843-0467C3033187}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DFC67909-3451-416C-A279-FD4B177C3DCE} = {1D41B9FB-8523-4B19-B090-336277DD521F}
+		{312671E5-BD5C-4DE7-B632-51A8912A7A8A} = {1D41B9FB-8523-4B19-B090-336277DD521F}
+		{A47ED68B-97C8-41BA-8843-0467C3033187} = {6A90BFEC-FD94-4335-9020-0B09C5FCCF04}
+		{E79B0F44-9394-4329-93BC-91A8D69C82B2} = {A81B1565-6DCD-4210-8E6A-7BF18BEDCB26}
+		{7A531FD7-930D-4744-8B18-0AD0EC25DF72} = {A81B1565-6DCD-4210-8E6A-7BF18BEDCB26}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {959E95AB-4A87-4337-B30B-C176A5A31833}
+	EndGlobalSection
+EndGlobal
