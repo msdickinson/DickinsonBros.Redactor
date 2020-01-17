@@ -106,7 +106,7 @@ namespace DickinsonBros.Redactor
             return _propertiesToRedact.Contains(property.Name);
         }
 
-        private JToken Parse(string value)
+        internal JToken Parse(string value)
         {
             try
             {
