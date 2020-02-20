@@ -7,9 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Redactor", "D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Library", "1 Library", "{1D41B9FB-8523-4B19-B090-336277DD521F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9 Scripts", "9 Scripts", "{A81B1565-6DCD-4210-8E6A-7BF18BEDCB26}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9 Misc", "9 Misc", "{A81B1565-6DCD-4210-8E6A-7BF18BEDCB26}"
 	ProjectSection(SolutionItems) = preProject
 		Scripts\CreateNugetPackagePreRelease.ps1 = Scripts\CreateNugetPackagePreRelease.ps1
+		DickinsonBros.Redactor.runsettings = DickinsonBros.Redactor.runsettings
+		Scripts\Publish.yml = Scripts\Publish.yml
+		Scripts\Test.yml = Scripts\Test.yml
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Redactor.Tests", "DickinsonBros.Redactor.Tests\DickinsonBros.Redactor.Tests.csproj", "{312671E5-BD5C-4DE7-B632-51A8912A7A8A}"
