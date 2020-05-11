@@ -17,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9 Misc", "9 Misc", "{A81B15
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Redactor.Tests", "DickinsonBros.Redactor.Tests\DickinsonBros.Redactor.Tests.csproj", "{312671E5-BD5C-4DE7-B632-51A8912A7A8A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Runner", "2 Runner", "{DC2AA0B5-C842-4E8D-818F-D008256E25EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DickinsonBros.Redactor.Runner", "DickinsonBros.Redactor.Runner\DickinsonBros.Redactor.Runner.csproj", "{A71D847E-F177-4739-A0E4-2BAA8C0B356A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,10 @@ Global
 		{312671E5-BD5C-4DE7-B632-51A8912A7A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{312671E5-BD5C-4DE7-B632-51A8912A7A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{312671E5-BD5C-4DE7-B632-51A8912A7A8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A71D847E-F177-4739-A0E4-2BAA8C0B356A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A71D847E-F177-4739-A0E4-2BAA8C0B356A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A71D847E-F177-4739-A0E4-2BAA8C0B356A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A71D847E-F177-4739-A0E4-2BAA8C0B356A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +46,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{DFC67909-3451-416C-A279-FD4B177C3DCE} = {1D41B9FB-8523-4B19-B090-336277DD521F}
 		{312671E5-BD5C-4DE7-B632-51A8912A7A8A} = {1D41B9FB-8523-4B19-B090-336277DD521F}
+		{A71D847E-F177-4739-A0E4-2BAA8C0B356A} = {DC2AA0B5-C842-4E8D-818F-D008256E25EC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {959E95AB-4A87-4337-B30B-C176A5A31833}
