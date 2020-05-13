@@ -1,11 +1,6 @@
-﻿//using DickinsonBros.Logger;
-//using DickinsonBros.Logger.Abstractions;
-//using DickinsonBros.Redactor;
-//using DickinsonBros.Redactor.Abstractions;
-using DickinsonBros.Redactor.Abstractions;
+﻿using DickinsonBros.Redactor.Abstractions;
 using DickinsonBros.Redactor.Models;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -28,23 +23,24 @@ namespace DickinsonBros.Redactor.Runner
             {
                 var services = InitializeDependencyInjection();
                 ConfigureServices(services);
-                using (var provider = services.BuildServiceProvider())
+                using (var _applicationLifetime = new Domain.ApplicationLifetime())
                 {
-                    var redactorService = provider.GetRequiredService<IRedactorService>();
+                    using (var provider = services.BuildServiceProvider())
+                    {
+                        var redactorService = provider.GetRequiredService<IRedactorService>();
 
-                    var input =
+                        var input =
 @"{
   ""Password"": ""password""
 }";
-
-                    Console.WriteLine("String:");
-                    Console.WriteLine(input);
-                    Console.WriteLine();
-                    Console.WriteLine("Redacted String:");
-                    Console.WriteLine(redactorService.Redact(input));
-
+                        Console.WriteLine("String:");
+                        Console.WriteLine(input);
+                        Console.WriteLine();
+                        Console.WriteLine("Redacted String:");
+                        Console.WriteLine(redactorService.Redact(input));
+                        _applicationLifetime.StopApplication();
+                    }
                 }
-
                 await Task.CompletedTask;
             }
             catch (Exception e)
@@ -56,14 +52,22 @@ namespace DickinsonBros.Redactor.Runner
                 Console.WriteLine("End...");
                 Console.ReadKey();
             }
-
         }
 
         private void ConfigureServices(IServiceCollection services)
         {
             services.AddOptions();
-            services.AddLogging(cfg => cfg.AddConsole());
-            services.AddSingleton<IApplicationLifetime, ApplicationLifetime>();
+            services.AddLogging(config =>
+            {
+                config.AddConfiguration(_configuration.GetSection("Logging"));
+
+                if (Environment.GetEnvironmentVariable("BUILD_CONFIGURATION") == "DEBUG")
+                {
+                    config.AddConsole();
+                }
+            });
+
+            services.AddSingleton<IApplicationLifetime, Domain.ApplicationLifetime>();
             services.AddSingleton<IRedactorService, RedactorService>();
             services.Configure<JsonRedactorOptions>(_configuration.GetSection(nameof(JsonRedactorOptions)));
         }
