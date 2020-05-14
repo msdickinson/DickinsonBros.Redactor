@@ -1,5 +1,6 @@
 ﻿using DickinsonBros.Redactor.Abstractions;
 using DickinsonBros.Redactor.Models;
+using DickinsonBros.Redactor.Runner.Services;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,10 +22,11 @@ namespace DickinsonBros.Redactor.Runner
         {
             try
             {
-                var services = InitializeDependencyInjection();
-                ConfigureServices(services);
-                using (var _applicationLifetime = new Domain.ApplicationLifetime())
+                using (var applicationLifetime = new ApplicationLifetime())
                 {
+                    var services = InitializeDependencyInjection();
+                    ConfigureServices(services, applicationLifetime);
+
                     using (var provider = services.BuildServiceProvider())
                     {
                         var redactorService = provider.GetRequiredService<IRedactorService>();
@@ -38,7 +40,7 @@ namespace DickinsonBros.Redactor.Runner
                         Console.WriteLine();
                         Console.WriteLine("Redacted String:");
                         Console.WriteLine(redactorService.Redact(input));
-                        _applicationLifetime.StopApplication();
+                        applicationLifetime.StopApplication();
                     }
                 }
                 await Task.CompletedTask;
@@ -54,7 +56,7 @@ namespace DickinsonBros.Redactor.Runner
             }
         }
 
-        private void ConfigureServices(IServiceCollection services)
+        private void ConfigureServices(IServiceCollection services, ApplicationLifetime applicationLifetime)
         {
             services.AddOptions();
             services.AddLogging(config =>
@@ -67,7 +69,7 @@ namespace DickinsonBros.Redactor.Runner
                 }
             });
 
-            services.AddSingleton<IApplicationLifetime, Domain.ApplicationLifetime>();
+            services.AddSingleton<IApplicationLifetime>(applicationLifetime);
             services.AddSingleton<IRedactorService, RedactorService>();
             services.Configure<JsonRedactorOptions>(_configuration.GetSection(nameof(JsonRedactorOptions)));
         }

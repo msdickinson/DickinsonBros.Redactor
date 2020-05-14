@@ -2,7 +2,7 @@
 using System;
 using System.Threading;
 
-namespace DickinsonBros.Redactor.Runner.Domain
+namespace DickinsonBros.Redactor.Runner.Services
 {
     public class ApplicationLifetime : IApplicationLifetime, IDisposable
     {
