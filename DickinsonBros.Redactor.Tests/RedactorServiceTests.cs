@@ -133,7 +133,6 @@ namespace DickinsonBros.Redactor.Tests
         {
             //Setup
             var usernameExpected = "username";
-            var passwordExpected = RedactorService.REDACTED_REPLACEMENT_VALUE;
 
             var input = @"{
                           ""Username"": ""username""
@@ -188,7 +187,6 @@ namespace DickinsonBros.Redactor.Tests
         {
             //Setup
             var inputExpected = @"DemoValue";
-            var expectedRedacted = RedactorService.REDACTED_REPLACEMENT_VALUE;
 
             var jsonRedactorOptions = new JsonRedactorOptions
             {
@@ -573,7 +571,7 @@ namespace DickinsonBros.Redactor.Tests
                 var observed = uut.Parse(input);
                 Assert.Fail("Exception Expected");
             }
-            catch(Exception ex)
+            catch
             {
 
             }
