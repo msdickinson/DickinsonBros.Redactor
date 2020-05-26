@@ -53,7 +53,15 @@ using DickinsonBros.Redactor;
 
 ...
 
-var redactorService = new RedactorService()
+var redactorServiceOptions = new RedactorServiceOptions
+{
+    PropertiesToRedact = new string[] { "Password" },
+    RegexValuesToRedact = new string[] { "Bearer" },
+};
+
+var options = Options.Create(redactorServiceOptions);
+
+var redactorService = new RedactorService(options);
 ```
 
 <h3>Create Instance (With Dependency Injection)</h3>
