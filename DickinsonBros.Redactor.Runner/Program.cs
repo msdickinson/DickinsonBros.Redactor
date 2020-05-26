@@ -1,4 +1,5 @@
 ﻿using DickinsonBros.Redactor.Abstractions;
+using DickinsonBros.Redactor.Extensions;
 using DickinsonBros.Redactor.Models;
 using DickinsonBros.Redactor.Runner.Services;
 using Microsoft.AspNetCore.Hosting;
@@ -35,12 +36,8 @@ namespace DickinsonBros.Redactor.Runner
 @"{
   ""Password"": ""password""
 }";
-                        Console.WriteLine("String:");
-                        Console.WriteLine(input);
-                        Console.WriteLine();
-                        Console.WriteLine("Redacted String:");
-                        Console.WriteLine(redactorService.Redact(input));
-                        applicationLifetime.StopApplication();
+                        Console.WriteLine($"Raw Json: \r\n {input}");
+                        Console.WriteLine($"Redacted Json: \r\n { redactorService.Redact(input)}");
                     }
                 }
                 await Task.CompletedTask;
@@ -70,8 +67,8 @@ namespace DickinsonBros.Redactor.Runner
             });
 
             services.AddSingleton<IApplicationLifetime>(applicationLifetime);
-            services.AddSingleton<IRedactorService, RedactorService>();
-            services.Configure<JsonRedactorOptions>(_configuration.GetSection(nameof(JsonRedactorOptions)));
+            services.AddRedactorService();
+            services.Configure<RedactorServiceOptions>(_configuration.GetSection(nameof(RedactorServiceOptions)));
         }
 
         IServiceCollection InitializeDependencyInjection()

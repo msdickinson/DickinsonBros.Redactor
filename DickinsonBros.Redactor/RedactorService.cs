@@ -16,7 +16,7 @@ namespace DickinsonBros.Redactor
     {
         internal const string REDACTED_REPLACEMENT_VALUE = "***REDACTED***";
         internal readonly HashSet<string> _propertiesToRedact;
-        internal readonly List<Regex> _valuesToRedact;
+        internal readonly List<Regex> _regexValuesToRedact;
 
         readonly static JsonSerializerSettings _jsonSettings = new JsonSerializerSettings
         {
@@ -24,11 +24,11 @@ namespace DickinsonBros.Redactor
             Formatting = Formatting.Indented
         };
 
-        public RedactorService(IOptions<JsonRedactorOptions> options)
+        public RedactorService(IOptions<RedactorServiceOptions> options)
         {
-            _valuesToRedact = new List<Regex>
+            _regexValuesToRedact = new List<Regex>
             (
-                (options.Value.ValuesToRedact ?? new string[] { }).Select(valueToRedact => new Regex(valueToRedact))
+                (options.Value.RegexValuesToRedact ?? new string[] { }).Select(valueToRedact => new Regex(valueToRedact))
             );
 
             _propertiesToRedact = new HashSet<string>
@@ -95,11 +95,11 @@ namespace DickinsonBros.Redactor
 
         internal bool IsRedactedValue(string value)
         {
-            return _valuesToRedact.Any(valueToRedact => valueToRedact.IsMatch(value));
+            return _regexValuesToRedact.Any(valueToRedact => valueToRedact.IsMatch(value));
         }
         internal bool IsRedactedValue(JValue jValue)
         {
-            return _valuesToRedact.Any(valueToRedact => valueToRedact.IsMatch(jValue.Value.ToString()));
+            return _regexValuesToRedact.Any(valueToRedact => valueToRedact.IsMatch(jValue.Value.ToString()));
         }
         internal bool IsRedactedValue(JProperty property)
         {
