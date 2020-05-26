@@ -1,5 +1,9 @@
 # DickinsonBros.Redactor
 
+<a href="https://www.nuget.org/packages/DickinsonBros.Redactor/">
+    <img src="https://img.shields.io/nuget/v/DickinsonBros.Redactor">
+</a>
+
 A redactor that can take a json string or an object and return a redacted string in json.
 
 Features
