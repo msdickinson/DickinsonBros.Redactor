@@ -24,7 +24,7 @@ namespace DickinsonBros.Redactor
             Formatting = Formatting.Indented
         };
 
-        public RedactorService(IOptions<JsonRedactorOptions> options)
+        public RedactorService(IOptions<RedactorServiceOptions> options)
         {
             _valuesToRedact = new List<Regex>
             (

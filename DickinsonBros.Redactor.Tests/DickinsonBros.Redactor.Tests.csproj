@@ -14,4 +14,8 @@
     <ProjectReference Include="..\DickinsonBros.Redactor\DickinsonBros.Redactor.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>

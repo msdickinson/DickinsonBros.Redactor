@@ -23,13 +23,13 @@ namespace DickinsonBros.Redactor.Tests
         public void Constructor_NullRedactOptions_EmptyRedactOptionsSet()
         {
             //Setup
-            var jsonRedactorOptions = new JsonRedactorOptions
+            var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = null,
                 ValuesToRedact = null,
             };
 
-            var options = Options.Create<JsonRedactorOptions>(jsonRedactorOptions);
+            var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
 
             //Act
             var uut = new RedactorService(options);
@@ -46,13 +46,13 @@ namespace DickinsonBros.Redactor.Tests
             var input = (object)@"Bearer 1000";
             var expectedRedacted = RedactorService.REDACTED_REPLACEMENT_VALUE;
 
-            var jsonRedactorOptions = new JsonRedactorOptions
+            var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
                 ValuesToRedact = new string[] { "Bearer" },
             };
 
-            var options = Options.Create<JsonRedactorOptions>(jsonRedactorOptions);
+            var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
  
             var uut = new RedactorService(options);
 
@@ -76,13 +76,13 @@ namespace DickinsonBros.Redactor.Tests
                 Password = "password"
             };
 
-            var jsonRedactorOptions = new JsonRedactorOptions
+            var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
                 ValuesToRedact = new string[] { "Bearer" },
             };
 
-            var options = Options.Create<JsonRedactorOptions>(jsonRedactorOptions);
+            var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
 
             var uut = new RedactorService(options);
 
@@ -108,13 +108,13 @@ namespace DickinsonBros.Redactor.Tests
                           ""Password"": ""password""
                         }";
 
-            var jsonRedactorOptions = new JsonRedactorOptions
+            var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
                 ValuesToRedact = new string[] { "Bearer" },
             };
 
-            var options = Options.Create<JsonRedactorOptions>(jsonRedactorOptions);
+            var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
 
             var uut = new RedactorService(options);
 
@@ -138,13 +138,13 @@ namespace DickinsonBros.Redactor.Tests
                           ""Username"": ""username""
                         }";
 
-            var jsonRedactorOptions = new JsonRedactorOptions
+            var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
                 ValuesToRedact = new string[] { "Bearer" },
             };
 
-            var options = Options.Create<JsonRedactorOptions>(jsonRedactorOptions);
+            var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
 
             var uut = new RedactorService(options);
 
@@ -165,13 +165,13 @@ namespace DickinsonBros.Redactor.Tests
             var input = @"Bearer 1000";
             var expectedRedacted = RedactorService.REDACTED_REPLACEMENT_VALUE;
 
-            var jsonRedactorOptions = new JsonRedactorOptions
+            var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
                 ValuesToRedact = new string[] { "Bearer" },
             };
 
-            var options = Options.Create<JsonRedactorOptions>(jsonRedactorOptions);
+            var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
 
             var uut = new RedactorService(options);
 
@@ -188,13 +188,13 @@ namespace DickinsonBros.Redactor.Tests
             //Setup
             var inputExpected = @"DemoValue";
 
-            var jsonRedactorOptions = new JsonRedactorOptions
+            var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] {  },
                 ValuesToRedact = new string[] { },
             };
 
-            var options = Options.Create<JsonRedactorOptions>(jsonRedactorOptions);
+            var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
 
             var uut = new RedactorService(options);
 
@@ -211,13 +211,13 @@ namespace DickinsonBros.Redactor.Tests
             //Setup
             var input = (JToken)null;
 
-            var jsonRedactorOptions = new JsonRedactorOptions
+            var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { },
                 ValuesToRedact = new string[] { },
             };
 
-            var options = Options.Create<JsonRedactorOptions>(jsonRedactorOptions);
+            var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
 
             var uut = new RedactorService(options);
 
@@ -238,13 +238,13 @@ namespace DickinsonBros.Redactor.Tests
                   }";
            
             var input = JToken.Parse(Jsoninput);
-            var jsonRedactorOptions = new JsonRedactorOptions
+            var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
                 ValuesToRedact = new string[] { "Bearer" },
             };
 
-            var options = Options.Create<JsonRedactorOptions>(jsonRedactorOptions);
+            var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
 
             var uut = new RedactorService(options);
 
@@ -266,13 +266,13 @@ namespace DickinsonBros.Redactor.Tests
                   }";
 
             var input = JToken.Parse(Jsoninput);
-            var jsonRedactorOptions = new JsonRedactorOptions
+            var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
                 ValuesToRedact = new string[] { "Bearer" },
             };
 
-            var options = Options.Create<JsonRedactorOptions>(jsonRedactorOptions);
+            var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
 
             var uut = new RedactorService(options);
 
@@ -296,13 +296,13 @@ namespace DickinsonBros.Redactor.Tests
                   }";
 
             var input = JToken.Parse(Jsoninput);
-            var jsonRedactorOptions = new JsonRedactorOptions
+            var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
                 ValuesToRedact = new string[] { "Bearer" },
             };
 
-            var options = Options.Create<JsonRedactorOptions>(jsonRedactorOptions);
+            var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
 
             var uut = new RedactorService(options);
 
@@ -329,13 +329,13 @@ namespace DickinsonBros.Redactor.Tests
                   }";
 
             var input = JToken.Parse(Jsoninput);
-            var jsonRedactorOptions = new JsonRedactorOptions
+            var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
                 ValuesToRedact = new string[] { "Bearer" },
             };
 
-            var options = Options.Create<JsonRedactorOptions>(jsonRedactorOptions);
+            var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
 
             var uut = new RedactorService(options);
 
@@ -357,13 +357,13 @@ namespace DickinsonBros.Redactor.Tests
             //Setup
             var input = @"Bearer 1000";
 
-            var jsonRedactorOptions = new JsonRedactorOptions
+            var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
                 ValuesToRedact = new string[] { "Bearer" },
             };
 
-            var options = Options.Create<JsonRedactorOptions>(jsonRedactorOptions);
+            var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
 
             var uut = new RedactorService(options);
 
@@ -380,11 +380,11 @@ namespace DickinsonBros.Redactor.Tests
             //Setup
             var input = @"Bearer 1000";
 
-            var jsonRedactorOptions = new JsonRedactorOptions
+            var redactorServiceOptions = new RedactorServiceOptions
             {
             };
 
-            var options = Options.Create<JsonRedactorOptions>(jsonRedactorOptions);
+            var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
             var uut = new RedactorService(options);
 
             //Act
@@ -400,13 +400,13 @@ namespace DickinsonBros.Redactor.Tests
             //Setup
             var input = new JValue("Bearer");
 
-            var jsonRedactorOptions = new JsonRedactorOptions
+            var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
                 ValuesToRedact = new string[] { "Bearer" },
             };
 
-            var options = Options.Create<JsonRedactorOptions>(jsonRedactorOptions);
+            var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
 
             var uut = new RedactorService(options);
 
@@ -423,11 +423,11 @@ namespace DickinsonBros.Redactor.Tests
             //Setup
             var input = new JValue("Bearer");
 
-            var jsonRedactorOptions = new JsonRedactorOptions
+            var redactorServiceOptions = new RedactorServiceOptions
             {
             };
 
-            var options = Options.Create<JsonRedactorOptions>(jsonRedactorOptions);
+            var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
             var uut = new RedactorService(options);
 
             //Act
@@ -443,13 +443,13 @@ namespace DickinsonBros.Redactor.Tests
             //Setup
             var input = new JProperty("Password", "");
 
-            var jsonRedactorOptions = new JsonRedactorOptions
+            var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
                 ValuesToRedact = new string[] { "Bearer" },
             };
 
-            var options = Options.Create<JsonRedactorOptions>(jsonRedactorOptions);
+            var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
 
             var uut = new RedactorService(options);
 
@@ -466,11 +466,11 @@ namespace DickinsonBros.Redactor.Tests
             //Setup
             var input = new JProperty("Password", "");
 
-            var jsonRedactorOptions = new JsonRedactorOptions
+            var redactorServiceOptions = new RedactorServiceOptions
             {
             };
 
-            var options = Options.Create<JsonRedactorOptions>(jsonRedactorOptions);
+            var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
             var uut = new RedactorService(options);
 
             //Act
@@ -486,8 +486,8 @@ namespace DickinsonBros.Redactor.Tests
             //Setup
             var input = (string)null;
 
-            var jsonRedactorOptions = new JsonRedactorOptions();
-            var options = Options.Create(jsonRedactorOptions);
+            var redactorServiceOptions = new RedactorServiceOptions();
+            var options = Options.Create(redactorServiceOptions);
             var uut = new RedactorService(options);
 
             //Act
@@ -503,8 +503,8 @@ namespace DickinsonBros.Redactor.Tests
             //Setup
             var input = "A";
 
-            var jsonRedactorOptions = new JsonRedactorOptions();
-            var options = Options.Create(jsonRedactorOptions);
+            var redactorServiceOptions = new RedactorServiceOptions();
+            var options = Options.Create(redactorServiceOptions);
             var uut = new RedactorService(options);
 
             //Act
@@ -520,8 +520,8 @@ namespace DickinsonBros.Redactor.Tests
             //Setup
             var input = "[0,1]";
 
-            var jsonRedactorOptions = new JsonRedactorOptions();
-            var options = Options.Create(jsonRedactorOptions);
+            var redactorServiceOptions = new RedactorServiceOptions();
+            var options = Options.Create(redactorServiceOptions);
             var uut = new RedactorService(options);
 
             //Act
@@ -542,8 +542,8 @@ namespace DickinsonBros.Redactor.Tests
                           ""Password"": ""password""
                         }";
 
-            var jsonRedactorOptions = new JsonRedactorOptions();
-            var options = Options.Create(jsonRedactorOptions);
+            var redactorServiceOptions = new RedactorServiceOptions();
+            var options = Options.Create(redactorServiceOptions);
             var uut = new RedactorService(options);
 
             //Act
@@ -561,8 +561,8 @@ namespace DickinsonBros.Redactor.Tests
             //Setup
             var input = "{ In%^(:'&vaild }";
 
-            var jsonRedactorOptions = new JsonRedactorOptions();
-            var options = Options.Create(jsonRedactorOptions);
+            var redactorServiceOptions = new RedactorServiceOptions();
+            var options = Options.Create(redactorServiceOptions);
             var uut = new RedactorService(options);
 
             //Act

@@ -6,7 +6,7 @@ using System.Text;
 namespace DickinsonBros.Redactor.Models
 {
     [ExcludeFromCodeCoverage]
-    public class JsonRedactorOptions
+    public class RedactorServiceOptions
     {
         public string[] PropertiesToRedact { get; set; }
         public string[] ValuesToRedact { get; set; }

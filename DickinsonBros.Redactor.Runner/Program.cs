@@ -1,4 +1,5 @@
 ﻿using DickinsonBros.Redactor.Abstractions;
+using DickinsonBros.Redactor.Extensions;
 using DickinsonBros.Redactor.Models;
 using DickinsonBros.Redactor.Runner.Services;
 using Microsoft.AspNetCore.Hosting;
@@ -70,8 +71,8 @@ namespace DickinsonBros.Redactor.Runner
             });
 
             services.AddSingleton<IApplicationLifetime>(applicationLifetime);
-            services.AddSingleton<IRedactorService, RedactorService>();
-            services.Configure<JsonRedactorOptions>(_configuration.GetSection(nameof(JsonRedactorOptions)));
+            services.AddRedactorService();
+            services.Configure<RedactorServiceOptions>(_configuration.GetSection(nameof(RedactorServiceOptions)));
         }
 
         IServiceCollection InitializeDependencyInjection()
