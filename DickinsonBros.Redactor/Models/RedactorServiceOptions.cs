@@ -9,6 +9,6 @@ namespace DickinsonBros.Redactor.Models
     public class RedactorServiceOptions
     {
         public string[] PropertiesToRedact { get; set; }
-        public string[] ValuesToRedact { get; set; }
+        public string[] RegexValuesToRedact { get; set; }
     }
 }

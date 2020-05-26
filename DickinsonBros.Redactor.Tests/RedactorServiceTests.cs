@@ -26,7 +26,7 @@ namespace DickinsonBros.Redactor.Tests
             var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = null,
-                ValuesToRedact = null,
+                RegexValuesToRedact = null,
             };
 
             var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
@@ -49,7 +49,7 @@ namespace DickinsonBros.Redactor.Tests
             var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
-                ValuesToRedact = new string[] { "Bearer" },
+                RegexValuesToRedact = new string[] { "Bearer" },
             };
 
             var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
@@ -79,7 +79,7 @@ namespace DickinsonBros.Redactor.Tests
             var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
-                ValuesToRedact = new string[] { "Bearer" },
+                RegexValuesToRedact = new string[] { "Bearer" },
             };
 
             var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
@@ -111,7 +111,7 @@ namespace DickinsonBros.Redactor.Tests
             var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
-                ValuesToRedact = new string[] { "Bearer" },
+                RegexValuesToRedact = new string[] { "Bearer" },
             };
 
             var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
@@ -141,7 +141,7 @@ namespace DickinsonBros.Redactor.Tests
             var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
-                ValuesToRedact = new string[] { "Bearer" },
+                RegexValuesToRedact = new string[] { "Bearer" },
             };
 
             var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
@@ -168,7 +168,7 @@ namespace DickinsonBros.Redactor.Tests
             var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
-                ValuesToRedact = new string[] { "Bearer" },
+                RegexValuesToRedact = new string[] { "Bearer" },
             };
 
             var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
@@ -191,7 +191,7 @@ namespace DickinsonBros.Redactor.Tests
             var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] {  },
-                ValuesToRedact = new string[] { },
+                RegexValuesToRedact = new string[] { },
             };
 
             var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
@@ -214,7 +214,7 @@ namespace DickinsonBros.Redactor.Tests
             var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { },
-                ValuesToRedact = new string[] { },
+                RegexValuesToRedact = new string[] { },
             };
 
             var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
@@ -241,7 +241,7 @@ namespace DickinsonBros.Redactor.Tests
             var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
-                ValuesToRedact = new string[] { "Bearer" },
+                RegexValuesToRedact = new string[] { "Bearer" },
             };
 
             var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
@@ -269,7 +269,7 @@ namespace DickinsonBros.Redactor.Tests
             var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
-                ValuesToRedact = new string[] { "Bearer" },
+                RegexValuesToRedact = new string[] { "Bearer" },
             };
 
             var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
@@ -299,7 +299,7 @@ namespace DickinsonBros.Redactor.Tests
             var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
-                ValuesToRedact = new string[] { "Bearer" },
+                RegexValuesToRedact = new string[] { "Bearer" },
             };
 
             var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
@@ -332,7 +332,7 @@ namespace DickinsonBros.Redactor.Tests
             var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
-                ValuesToRedact = new string[] { "Bearer" },
+                RegexValuesToRedact = new string[] { "Bearer" },
             };
 
             var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
@@ -360,7 +360,7 @@ namespace DickinsonBros.Redactor.Tests
             var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
-                ValuesToRedact = new string[] { "Bearer" },
+                RegexValuesToRedact = new string[] { "Bearer" },
             };
 
             var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
@@ -403,7 +403,7 @@ namespace DickinsonBros.Redactor.Tests
             var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
-                ValuesToRedact = new string[] { "Bearer" },
+                RegexValuesToRedact = new string[] { "Bearer" },
             };
 
             var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);
@@ -446,7 +446,7 @@ namespace DickinsonBros.Redactor.Tests
             var redactorServiceOptions = new RedactorServiceOptions
             {
                 PropertiesToRedact = new string[] { "Password" },
-                ValuesToRedact = new string[] { "Bearer" },
+                RegexValuesToRedact = new string[] { "Bearer" },
             };
 
             var options = Options.Create<RedactorServiceOptions>(redactorServiceOptions);

@@ -36,12 +36,8 @@ namespace DickinsonBros.Redactor.Runner
 @"{
   ""Password"": ""password""
 }";
-                        Console.WriteLine("String:");
-                        Console.WriteLine(input);
-                        Console.WriteLine();
-                        Console.WriteLine("Redacted String:");
-                        Console.WriteLine(redactorService.Redact(input));
-                        applicationLifetime.StopApplication();
+                        Console.WriteLine($"Raw Json: \r\n {input}");
+                        Console.WriteLine($"Redacted Json: \r\n { redactorService.Redact(input)}");
                     }
                 }
                 await Task.CompletedTask;
