@@ -28,17 +28,15 @@ namespace DickinsonBros.Redactor.Runner
                     var services = InitializeDependencyInjection();
                     ConfigureServices(services, applicationLifetime);
 
-                    using (var provider = services.BuildServiceProvider())
-                    {
-                        var redactorService = provider.GetRequiredService<IRedactorService>();
+                    using var provider = services.BuildServiceProvider();
+                    var redactorService = provider.GetRequiredService<IRedactorService>();
 
-                        var input =
+                    var input =
 @"{
   ""Password"": ""password""
 }";
-                        Console.WriteLine($"Raw Json: \r\n {input}");
-                        Console.WriteLine($"Redacted Json: \r\n { redactorService.Redact(input)}");
-                    }
+                    Console.WriteLine($"Raw Json: \r\n {input}");
+                    Console.WriteLine($"Redacted Json: \r\n { redactorService.Redact(input)}");
                 }
                 await Task.CompletedTask;
             }
