@@ -66,7 +66,6 @@ namespace DickinsonBros.Redactor.Runner
 
             services.AddSingleton<IApplicationLifetime>(applicationLifetime);
             services.AddRedactorService();
-            services.Configure<RedactorServiceOptions>(_configuration.GetSection(nameof(RedactorServiceOptions)));
         }
 
         IServiceCollection InitializeDependencyInjection()
