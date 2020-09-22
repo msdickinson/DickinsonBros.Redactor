@@ -14,8 +14,6 @@ namespace DickinsonBros.Redactor.Tests.Configurator
     [TestClass]
     public class RedactorServiceOptionsConfiguratorTests : BaseTest
     {
-        public const string ADMIN_TOKEN = "ExampleToken";
-
         [TestMethod]
         public async Task Configure_Runs_DecryptCalled()
         {

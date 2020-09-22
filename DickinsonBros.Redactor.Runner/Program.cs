@@ -1,10 +1,9 @@
 ﻿using DickinsonBros.Redactor.Abstractions;
 using DickinsonBros.Redactor.Extensions;
-using DickinsonBros.Redactor.Models;
 using DickinsonBros.Redactor.Runner.Services;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
@@ -23,21 +22,20 @@ namespace DickinsonBros.Redactor.Runner
         {
             try
             {
-                using (var applicationLifetime = new ApplicationLifetime())
-                {
-                    var services = InitializeDependencyInjection();
-                    ConfigureServices(services, applicationLifetime);
+                var services = InitializeDependencyInjection();
+                ConfigureServices(services);
 
-                    using var provider = services.BuildServiceProvider();
-                    var redactorService = provider.GetRequiredService<IRedactorService>();
+                using var provider = services.BuildServiceProvider();
+                var redactorService = provider.GetRequiredService<IRedactorService>();
+                var hostApplicationLifetime = provider.GetService<IHostApplicationLifetime>();
 
-                    var input =
+                var input =
 @"{
-  ""Password"": ""password""
+""Password"": ""password""
 }";
-                    Console.WriteLine($"Raw Json: \r\n {input}");
-                    Console.WriteLine($"Redacted Json: \r\n { redactorService.Redact(input)}");
-                }
+                Console.WriteLine($"Raw Json: \r\n {input}");
+                Console.WriteLine($"Redacted Json: \r\n { redactorService.Redact(input)}");
+                hostApplicationLifetime.StopApplication();
                 await Task.CompletedTask;
             }
             catch (Exception e)
@@ -51,7 +49,7 @@ namespace DickinsonBros.Redactor.Runner
             }
         }
 
-        private void ConfigureServices(IServiceCollection services, ApplicationLifetime applicationLifetime)
+        private void ConfigureServices(IServiceCollection services)
         {
             services.AddOptions();
             services.AddLogging(config =>
@@ -64,7 +62,7 @@ namespace DickinsonBros.Redactor.Runner
                 }
             });
 
-            services.AddSingleton<IApplicationLifetime>(applicationLifetime);
+            services.AddSingleton<IHostApplicationLifetime, HostApplicationLifetime>();
             services.AddRedactorService();
         }
 
