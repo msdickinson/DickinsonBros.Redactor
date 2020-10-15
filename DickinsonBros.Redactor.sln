@@ -21,8 +21,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Runner", "2 Runner", "{DC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Redactor.Runner", "DickinsonBros.Redactor.Runner\DickinsonBros.Redactor.Runner.csproj", "{A71D847E-F177-4739-A0E4-2BAA8C0B356A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{C68D7427-F31B-42B0-AFF7-41282C5C7BCC}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,10 +39,6 @@ Global
 		{A71D847E-F177-4739-A0E4-2BAA8C0B356A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A71D847E-F177-4739-A0E4-2BAA8C0B356A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A71D847E-F177-4739-A0E4-2BAA8C0B356A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C68D7427-F31B-42B0-AFF7-41282C5C7BCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C68D7427-F31B-42B0-AFF7-41282C5C7BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C68D7427-F31B-42B0-AFF7-41282C5C7BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C68D7427-F31B-42B0-AFF7-41282C5C7BCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
