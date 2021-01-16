@@ -3,25 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Redactor", "DickinsonBros.Redactor\DickinsonBros.Redactor.csproj", "{DFC67909-3451-416C-A279-FD4B177C3DCE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Source", "1 Source", "{A51A9F50-2A36-4379-A0D5-7E1F87B56BE8}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Library", "1 Library", "{1D41B9FB-8523-4B19-B090-336277DD521F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9 Misc", "9 Misc", "{A81B1565-6DCD-4210-8E6A-7BF18BEDCB26}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Tests", "2 Tests", "{91DA2724-CDF2-4CB0-87D3-64F104451A24}"
 	ProjectSection(SolutionItems) = preProject
-		Scripts\CreateNugetPackagePreRelease.ps1 = Scripts\CreateNugetPackagePreRelease.ps1
-		DickinsonBros.Redactor.runsettings = DickinsonBros.Redactor.runsettings
+		Tests\DickinsonBros.Redactor.runsettings = Tests\DickinsonBros.Redactor.runsettings
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 Runner", "3 Runner", "{5B113F29-69A0-4AC5-9E4D-4967A91A184D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 Scripts", "4 Scripts", "{F495AA5E-9E69-4FC7-8136-BD9A97C72940}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\Prerelease.DickinsonBros.Redactor.ps1 = Scripts\Prerelease.DickinsonBros.Redactor.ps1
 		Scripts\Publish.yml = Scripts\Publish.yml
 		Scripts\Test.yml = Scripts\Test.yml
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Redactor.Tests", "DickinsonBros.Redactor.Tests\DickinsonBros.Redactor.Tests.csproj", "{312671E5-BD5C-4DE7-B632-51A8912A7A8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Redactor", "Source\DickinsonBros.Redactor\DickinsonBros.Redactor.csproj", "{CBA565BD-7F12-41AD-82DA-454BAE4CBE3E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Runner", "2 Runner", "{DC2AA0B5-C842-4E8D-818F-D008256E25EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Redactor.Tests", "Tests\DickinsonBros.Redactor.Tests\DickinsonBros.Redactor.Tests.csproj", "{FDB7F9B1-B069-4D83-91AF-6669931AF3E4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Redactor.Runner", "DickinsonBros.Redactor.Runner\DickinsonBros.Redactor.Runner.csproj", "{A71D847E-F177-4739-A0E4-2BAA8C0B356A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{C68D7427-F31B-42B0-AFF7-41282C5C7BCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DickinsonBros.Redactor.Runner", "Runner\DickinsonBros.Redactor.Runner\DickinsonBros.Redactor.Runner.csproj", "{5E649612-F2CF-4979-87DE-9358604BFAD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,30 +31,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DFC67909-3451-416C-A279-FD4B177C3DCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DFC67909-3451-416C-A279-FD4B177C3DCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DFC67909-3451-416C-A279-FD4B177C3DCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DFC67909-3451-416C-A279-FD4B177C3DCE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{312671E5-BD5C-4DE7-B632-51A8912A7A8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{312671E5-BD5C-4DE7-B632-51A8912A7A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{312671E5-BD5C-4DE7-B632-51A8912A7A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{312671E5-BD5C-4DE7-B632-51A8912A7A8A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A71D847E-F177-4739-A0E4-2BAA8C0B356A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A71D847E-F177-4739-A0E4-2BAA8C0B356A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A71D847E-F177-4739-A0E4-2BAA8C0B356A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A71D847E-F177-4739-A0E4-2BAA8C0B356A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C68D7427-F31B-42B0-AFF7-41282C5C7BCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C68D7427-F31B-42B0-AFF7-41282C5C7BCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C68D7427-F31B-42B0-AFF7-41282C5C7BCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C68D7427-F31B-42B0-AFF7-41282C5C7BCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBA565BD-7F12-41AD-82DA-454BAE4CBE3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBA565BD-7F12-41AD-82DA-454BAE4CBE3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBA565BD-7F12-41AD-82DA-454BAE4CBE3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBA565BD-7F12-41AD-82DA-454BAE4CBE3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDB7F9B1-B069-4D83-91AF-6669931AF3E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB7F9B1-B069-4D83-91AF-6669931AF3E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB7F9B1-B069-4D83-91AF-6669931AF3E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB7F9B1-B069-4D83-91AF-6669931AF3E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E649612-F2CF-4979-87DE-9358604BFAD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E649612-F2CF-4979-87DE-9358604BFAD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E649612-F2CF-4979-87DE-9358604BFAD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E649612-F2CF-4979-87DE-9358604BFAD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{DFC67909-3451-416C-A279-FD4B177C3DCE} = {1D41B9FB-8523-4B19-B090-336277DD521F}
-		{312671E5-BD5C-4DE7-B632-51A8912A7A8A} = {1D41B9FB-8523-4B19-B090-336277DD521F}
-		{A71D847E-F177-4739-A0E4-2BAA8C0B356A} = {DC2AA0B5-C842-4E8D-818F-D008256E25EC}
+		{CBA565BD-7F12-41AD-82DA-454BAE4CBE3E} = {A51A9F50-2A36-4379-A0D5-7E1F87B56BE8}
+		{FDB7F9B1-B069-4D83-91AF-6669931AF3E4} = {91DA2724-CDF2-4CB0-87D3-64F104451A24}
+		{5E649612-F2CF-4979-87DE-9358604BFAD8} = {5B113F29-69A0-4AC5-9E4D-4967A91A184D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {959E95AB-4A87-4337-B30B-C176A5A31833}
