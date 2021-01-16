@@ -30,6 +30,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DickinsonBros.Redactor\DickinsonBros.Redactor.csproj" />
+    <ProjectReference Include="..\..\Source\DickinsonBros.Redactor\DickinsonBros.Redactor.csproj" />
   </ItemGroup>
 </Project>
