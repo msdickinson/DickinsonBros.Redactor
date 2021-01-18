@@ -33,4 +33,4 @@ Redacted Json:
 }
 ```
 
-[Sample Runner](https://github.com/msdickinson/DickinsonBros.Redactor/tree/master/DickinsonBros.Redactor.Runner)
+[Sample Runner](Runner/DickinsonBros.Redactor.Runner)
