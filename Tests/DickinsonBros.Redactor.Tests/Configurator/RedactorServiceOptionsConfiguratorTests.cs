@@ -1,6 +1,6 @@
 ﻿using DickinsonBros.Redactor.Configurator;
 using DickinsonBros.Redactor.Models;
-using DickinsonBros.Test;
+using DickinsonBros.UnitTest;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
