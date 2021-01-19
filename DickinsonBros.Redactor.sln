@@ -7,14 +7,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Source", "1 Source", "{A5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Tests", "2 Tests", "{91DA2724-CDF2-4CB0-87D3-64F104451A24}"
 	ProjectSection(SolutionItems) = preProject
-		Tests\DickinsonBros.Redactor.runsettings = Tests\DickinsonBros.Redactor.runsettings
+		Tests\CodeCoverage.runsettings = Tests\CodeCoverage.runsettings
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 Runner", "3 Runner", "{5B113F29-69A0-4AC5-9E4D-4967A91A184D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 Scripts", "4 Scripts", "{F495AA5E-9E69-4FC7-8136-BD9A97C72940}"
 	ProjectSection(SolutionItems) = preProject
-		Scripts\Prerelease.DickinsonBros.Redactor.ps1 = Scripts\Prerelease.DickinsonBros.Redactor.ps1
+		Scripts\PackagePrerelease.ps1 = Scripts\PackagePrerelease.ps1
 		Scripts\Publish.yml = Scripts\Publish.yml
 		Scripts\Test.yml = Scripts\Test.yml
 	EndProjectSection

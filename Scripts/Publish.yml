@@ -39,7 +39,7 @@ steps:
       !**\obj\**
     searchFolder: '$(System.DefaultWorkingDirectory)'
     codeCoverageEnabled: true
-    runSettingsFile: '$(runSettingsFile)'
+    runSettingsFile: 'Tests/CodeCoverage.runsettings'
 
 - task: DotNetCoreCLI@2
   displayName: Pack Source - Release
